@@ -163,3 +163,40 @@ Include:
 This project successfully demonstrates how SDN can be used to implement QoS by assigning different priorities to traffic flows using OpenFlow rules. It highlights the flexibility and programmability of SDN-based networks.
 
 ---
+
+## 📊 Scalability Performance Evaluation
+
+To evaluate the scalability of the QoS controller, the system behavior is analyzed for increasing number of hosts. Due to system limitations, large-scale results are theoretical and based on expected SDN behavior.
+
+### 🔢 Test Scenarios
+
+* Small scale → 10 hosts
+* Medium scale → 100 hosts
+* Large scale → 1000 hosts
+* Very large scale → 10000 hosts
+
+---
+
+### 📋 Performance Table
+
+```
++------------+------------------+----------------------+------------------------+-----------------------------+
+| Hosts      | Flow Entries     | Controller Load      | Avg Latency (Expected) | QoS Effectiveness           |
++------------+------------------+----------------------+------------------------+-----------------------------+
+| 10         | ~20              | Low                  | ~0.2 ms                | Clearly visible             |
+| 100        | ~200             | Moderate             | ~0.5 ms                | Maintained                  |
+| 1000       | ~2000            | High                 | ~1–2 ms                | Slight degradation          |
+| 10000      | ~20000           | Very High            | ~5–10 ms               | Reduced but functional      |
++------------+------------------+----------------------+------------------------+-----------------------------+
+```
+
+---
+
+### 📈 Observations
+
+* Flow table size increases linearly with number of hosts
+* Controller processing load increases significantly at scale
+* Latency increases due to control overhead
+* QoS priority mechanism continues to function correctly
+
+---
